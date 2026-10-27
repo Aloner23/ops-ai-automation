@@ -1,0 +1,42 @@
+<!doctype html>
+<html lang="es">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Ops AI Automation · Demo</title>
+    <link rel="stylesheet" href="/static/styles.css" />
+  </head>
+  <body>
+    <main>
+      <p class="eyebrow">AUTOMATIZACIÓN OPERATIVA · DEMO REPRODUCIBLE</p>
+      <h1>Procesa solicitudes con IA, sin perder el control.</h1>
+      <p class="intro">Una demostración full-stack de clasificación, políticas, aprobación humana y auditoría. Usa un motor determinista: no llama servicios externos ni requiere claves.</p>
+      <section class="grid">
+        <form id="intake-form" class="card">
+          <h2>Nueva solicitud</h2>
+          <label>Solicitante<input id="requester" value="Equipo comercial" required /></label>
+          <label>Contexto<textarea id="text" required>Necesitamos reservar la terraza para un evento el próximo viernes. Contacto: cliente@ejemplo.com</textarea></label>
+          <div class="examples">
+            <button type="button" data-example="reservation">Reserva</button>
+            <button type="button" data-example="finance">Finanzas</button>
+          </div>
+          <button class="primary" type="submit">Analizar solicitud</button>
+        </form>
+        <section class="card result" aria-live="polite">
+          <p class="muted">Resultado</p>
+          <h2 id="state">Esperando una solicitud</h2>
+          <p id="summary">El motor propondrá una acción, evaluará el riesgo y pedirá aprobación antes de ejecutar.</p>
+          <div id="details" hidden></div>
+          <button id="approve" class="primary" hidden>Aprobar acción propuesta</button>
+        </section>
+      </section>
+      <section class="principles">
+        <article><strong>1. Interpretar</strong><span>Clasifica y resume la solicitud en un esquema estable.</span></article>
+        <article><strong>2. Restringir</strong><span>Las reglas de negocio corren en el servidor, fuera del modelo.</span></article>
+        <article><strong>3. Aprobar</strong><span>Las acciones externas requieren una persona responsable.</span></article>
+        <article><strong>4. Auditar</strong><span>Registra el proceso y elimina correos del texto almacenado.</span></article>
+      </section>
+    </main>
+    <script src="/static/app.js"></script>
+  </body>
+</html>
